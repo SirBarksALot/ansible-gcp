@@ -1,0 +1,9 @@
+---
+zone: europe-west4-a
+machine_type: f1-micro
+image: ubuntu-1904-disco-v20190417
+service_account_email: filip-developer@setup-vms-project-1.iam.gserviceaccount.com
+credentials_file: /home/filiplez18/credentials/credentialsGCP.json
+project_id: setup-vms-project-1
+instances_names_list: dev, test, prod
+...

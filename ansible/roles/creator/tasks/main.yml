@@ -1,21 +1,11 @@
----
-- name: Create GCE instances  
-
-  vars:
-    machine_type: f1-micro
-    image: ubuntu-1904-disco-v20190417
-    service_account_email: filip-developer@setup-vms-project-1.iam.gserviceaccount.com
-    credentials_file: /home/filiplez18/credentials/credentialsGCP.json
-    project_id: setup-vms-project-1
-    instances_names_list: dev, test, prod
-
-  tasks:
-    - name: Launch instances
-      gce:
-          instance_names: "{{ instances_name_list }}"
-          machine_type: "{{ machine_type }}"
-          image: "{{ image }}"
-          service_account_email: "{{ service_account_email }}"
-          credentials_file: "{{ credentials_file }}"
-          project_id: "{{ project_id }}"
-      register: gce
+- name: "Create GCE instances"
+  gce:
+    instance_names: "{{ instances_names_list }}"
+    zone: "{{ zone }}"
+    state: present
+    machine_type: "{{ machine_type }}"
+    image: "{{ image }}"
+    service_account_email: "{{ service_account_email }}"
+    credentials_file: "{{ credentials_file }}"
+    project_id: "{{ project_id }}"
+  register: gce
