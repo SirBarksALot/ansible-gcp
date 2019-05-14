@@ -1,8 +1,8 @@
 - name: "Create GCE instances"
   gce:
-    instance_names: "{{ instances_names_list }}"
+    instance_names: "{{ instance_names }}"
     zone: "{{ zone }}"
-    state: present
+    state: "{{ state }}"
     machine_type: "{{ machine_type }}"
     image: "{{ image }}"
     service_account_email: "{{ service_account_email }}"

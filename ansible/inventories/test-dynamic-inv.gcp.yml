@@ -1,0 +1,11 @@
+---
+plugin: gcp_compute
+zones: # populate inventory with instances in these regions
+  - europe-west4-a
+projects:
+  - setup-vms-project-1
+filters:
+  - name = test
+service_account_file: /home/filiplez18/credentials/credentialsGCP.json
+auth_kind: serviceaccount
+...
