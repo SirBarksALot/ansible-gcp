@@ -1,0 +1,9 @@
+---
+- name: Manage new instances
+  hosts: all
+  connection: ssh
+  become: True
+  tasks: 
+    - name: Ping dev server
+      ping: 
+...       
