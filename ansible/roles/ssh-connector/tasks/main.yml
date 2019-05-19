@@ -1,3 +1,9 @@
 ---
-- name: 
+- name: "Removing existing key"
+  connection: local
+  shell: ssh-keygen -f "/home/filiplez18/.ssh/known_hosts" -R "{{ instance_ip }}"
+
+- name: "Adding created instance to know_hosts"
+  connection: local
+  shell: ssh-keyscan -H {{ inventory_hostname }} >> ~/.ssh/known_hosts 
 ...
